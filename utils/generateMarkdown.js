@@ -1,19 +1,37 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+const fs = require('fs');
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// writing files
+const writeFile = fileContent => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('./dist/index.html', fileContent, err => {
+      if (err) {
+        reject(err);
+        return;
+      }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+      resolve({
+        ok: true,
+        message: 'File created!'
+      });
+    });
+  });
+};
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-`;
-}
+// copying file
+const copyFile = () => {
+  return new Promise((resolve, reject) => {
+    fs.copyFile('./src/style.css', './dist/style.css', err => {
+      if (err) {
+        reject(err);
+        return;
+      }
 
-module.exports = generateMarkdown;
+      resolve({
+        ok: true,
+        message: 'Stylesheet created!'
+      });
+    });
+  });
+};
+
+module.exports = { writeFile, copyFile };
