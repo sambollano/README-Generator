@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { generate } = require('rxjs');
 
 // writing files
 const writeFile = fileContent => {
@@ -34,4 +35,4 @@ const copyFile = () => {
   });
 };
 
-module.exports = { writeFile, copyFile };
+module.exports = generateMarkdown;
