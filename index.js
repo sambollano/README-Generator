@@ -10,48 +10,48 @@ var path = require('path');
 const questions = [
     {
         type: "input",
-        message: "money",
-        name: "How much Money is it?"
+        message: "What is You're Name?",
+        name: "Samantha"
     },
     {
         type: "input",
-        message: "Skill",
+        message: "What are some skills you have?",
         name: "What is the skill?"
     },
     {
         type: "input",
-        message: "job",
+        message: "What Kind of Job do you have?",
         name: "What is the Job Title?"
     },
     {
         type: "input",
-        message: "test",
-        name: "How do you test the link?"
+        message: "What's You're Favorite Color?",
+        name: "Favorite color?"
     },
     {
         type: "input",
-        message: "age",
+        message: "What is You're Age?",
         name: "What is your age?"
     },
     {
         type: "input",
-        message: "install",
-        name: "How do you install?"
+        message: "What's You're Favorite Animal?",
+        name: "Favorite Animal?"
     },
     {
         type: "input",
-        message: "contact",
-        name: "How do you Contact People?"
+        message: "What's School do you attend?",
+        name: "School Name?"
     },
     {
         type: "input",
-        message: "name",
-        name: "What is Your name?"
+        message: "What is You're Favorite Game?",
+        name: "Favorite Game?"
     },
     {
         type: "input",
-        message: "title",
-        name: "What is the title of your App?"
+        message: "What is You're Favorite Drink?",
+        name: "Favorite Drink?"
     }
 ];
 
@@ -75,7 +75,6 @@ function init() {
         inquirer.prompt(questions)
         .then((inquirerResponse) => {   
             console.log("Generated");
-          writeToFile("README.md", generateMarkdown({...inquirerResponse}))
         })
         .catch((err) => {
             console.log(err);
