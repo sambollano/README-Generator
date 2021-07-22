@@ -3,8 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generate = require('./utils/generateMarkdown');
 
-var inquirer = require ('inquirer'),
-var fs = require('fs');
 var util = require('util');
 var path = require('path');
 
